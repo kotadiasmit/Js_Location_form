@@ -11,9 +11,15 @@ const modelContainerEle=document.getElementById('model-container')
 const modelBackdrop=document.getElementsByClassName('modal-backdrop')
 const deleteModelLabel=document.getElementById('deleteModelLabel')
 const deleteLocation=document.getElementById('deleteLocation')
+
 let userLocationArray=[]
 
 let deleteArrayIndex
+
+const addLocationModal = document.getElementById('staticBackdrop')
+addLocationModal.addEventListener('shown.bs.modal', () => {
+    inputUsername.focus()
+})
 
 addLocationBtn.onclick=function(){
     inputUsername.value=''
@@ -136,13 +142,13 @@ addBtn.onclick=function(event){
    }
    userLocationArray.push(userDetailsObj)
    addLocation(userDetailsObj)
-   //modelContainerEle.classList.add('close-popup')
-   //modelBackdrop.classList.remove('modal-backdrop fade show')
    
 }else{
     console.log(event)
     event.preventDefault()
     alert('Please enter valid details')
+    addBtn.removeAttribute('data-bs-dismiss',"modal")
+
 }
 
 }

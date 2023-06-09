@@ -33,7 +33,7 @@
 
 <!-- Modal -->
 <div class="model-container" id="model-container" >
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" aria-labelledby="staticBackdropLabel" aria-hidden="true" autofocus="false">
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="true" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content" id="model-container">
       <div class="modal-header">
@@ -41,7 +41,7 @@
       </div>
       <div class="modal-body">
         <div class="container">
-          <form class="form-container">
+          <form class="form-container" onsubmit="event.preventDefault()">
             <h1 class="heading" id="form-heading">Add Location Data</h1>
             <label class='label' for="'username">User Name</label>
             <input class='input' id='username' type="text" placeholder="userName"/>
